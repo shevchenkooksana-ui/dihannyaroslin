@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Надходження газів до організмів рослин і грибів — інтерактивні завдання, 10 клас</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0B2545;--bg:#EAF2FF;--card:#fff;--good:#1B7F3B;--goodbg:#D8F3DC;--bad:#B3261E;--badbg:#FDE2E2;--line:#0B2545}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.55 "Onest","Trebuchet MS",Verdana,Arial,sans-serif}
+header{background:var(--ink);color:#fff;padding:28px 20px 22px;border-bottom:8px solid #FFC400}
+header h1{margin:0 auto;max-width:980px;font-size:clamp(1.5rem,4vw,2.3rem);line-height:1.2;font-weight:800}
+header p{margin:8px auto 0;max-width:980px;color:#FFE27A;font-weight:600}
+main{max-width:980px;margin:0 auto;padding:18px 14px 40px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+nav button{font:inherit;font-weight:700;padding:10px 14px;border:3px solid var(--c);background:#fff;color:var(--c);border-radius:10px;cursor:pointer}
+nav button[aria-selected=true]{background:var(--c);color:#fff}
+.panel{background:var(--card);border:3px solid var(--ink);border-top:12px solid var(--c);border-radius:12px;padding:20px}
+.panel h2{margin:0 0 6px;font-size:1.5rem;color:var(--c)}
+.intro{margin:0 0 16px;font-weight:600}
+.item{border:2px solid #9DB4D6;border-radius:10px;padding:12px 14px;margin:0 0 12px;background:#fff}
+.item.good{border-color:var(--good);background:var(--goodbg)}
+.item.bad{border-color:var(--bad);background:var(--badbg)}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.opt{font:inherit;font-weight:600;padding:8px 16px;border:2px solid var(--ink);background:#fff;color:var(--ink);border-radius:8px;cursor:pointer}
+.opt[aria-pressed=true]{background:var(--ink);color:#fff}
+.note{margin:8px 0 0;font-size:.95rem;font-weight:600}
+select{font:inherit;font-weight:600;padding:6px 8px;border:2px solid var(--ink);border-radius:8px;background:#fff;color:var(--ink);max-width:100%}
+select.good{background:var(--goodbg);border-color:var(--good)}
+select.bad{background:var(--badbg);border-color:var(--bad)}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:10px;align-items:center}
+@media(max-width:640px){.row{grid-template-columns:1fr}}
+.cloze{line-height:2.4}
+label.ch{display:block;padding:6px 8px;border-radius:8px;cursor:pointer}
+label.ch:hover{background:#E3ECFA}
+label.ch input{width:20px;height:20px;margin-right:10px;vertical-align:-3px;accent-color:var(--ink)}
+.seq{list-style:none;margin:0;padding:0}
+.seq li{display:flex;gap:10px;align-items:center;justify-content:space-between}
+.mv{display:flex;gap:6px}
+.mv button{font:inherit;font-weight:800;width:42px;height:42px;border:2px solid var(--ink);background:#FFC400;color:var(--ink);border-radius:8px;cursor:pointer}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
+.btn{font:inherit;font-weight:800;padding:12px 22px;border:3px solid var(--ink);background:var(--ink);color:#fff;border-radius:10px;cursor:pointer}
+.btn.alt{background:#fff;color:var(--ink)}
+.res{font-weight:800;margin:0;padding:6px 12px;border-radius:8px}
+.res.ok{background:var(--goodbg);color:#0E5A27}
+.res.mid{background:#FFF1B8;color:#5C4400}
+.sa-group{border:3px solid var(--g);border-radius:12px;padding:12px 14px;margin:0 0 16px}
+.sa-group legend{font-weight:800;font-size:1.25rem;color:#fff;background:var(--g);padding:2px 14px;border-radius:8px}
+.sa-q{padding:8px 0;border-bottom:1px dashed #9DB4D6}
+.sa-q:last-child{border:0}
+.sa-q p{margin:0 0 4px;font-weight:600}
+.sa-q label{display:inline-block;margin-right:14px;font-weight:600;cursor:pointer}
+.sa-q input{width:20px;height:20px;vertical-align:-4px;margin-right:5px;accent-color:var(--g)}
+.name{font:inherit;padding:8px 10px;border:2px solid var(--ink);border-radius:8px;width:100%;max-width:360px}
+.src{margin-top:26px;font-size:.9rem;background:#fff;border:2px solid #9DB4D6;border-radius:10px;padding:12px 16px}
+.src ul{margin:6px 0 0;padding-left:20px}
+:focus-visible{outline:4px solid #FF6D00;outline-offset:2px}
+@media print{header,nav,.bar button,.src{display:none}.panel[hidden]{display:none}body{background:#fff}}
+</style>
+</head>
+<body>
+<header>
+<h1>Надходження газів до організмів рослин і грибів</h1>
+<p>Біологія і екологія, 10 клас · інтерактивні завдання · §32 «Надходження газів та поживних речовин до організмів рослин і грибів»</p>
+</header>
+<main>
+<nav role="tablist" id="tabs" aria-label="Завдання"></nav>
+<div id="panels"></div>
+<div class="src"><b>Джерела:</b>
+<ul>
+<li>Підручник, §32 «Надходження газів та поживних речовин до організмів рослин і грибів» (мал. 32.1–32.3), с. 68–69.</li>
+<li>Конспект уроку «Надходження газів до організмів рослин і грибів. Роль продихів. Всмоктування речовин з ґрунту».</li>
+<li>Навчальні матеріали з фізіології рослин: learn.ztu.edu.ua, moodle.znu.edu.ua (типи транспірації, умови відкривання продихів, гормони).</li>
+<li>Focus.ua — про CAM-фотосинтез і нічне відкривання продихів.</li>
+</ul></div>
+</main>
+<script>
+const h=(t,a={},...k)=>{const e=document.createElement(t);for(const[x,v]of Object.entries(a)){if(x==="class")e.className=v;else if(x.startsWith("on"))e.addEventListener(x.slice(2),v);else e.setAttribute(x,v)}k.flat().forEach(c=>e.append(c&&c.nodeType?c:document.createTextNode(c)));return e};
+const sh=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const mark=(e,ok)=>{e.classList.remove("good","bad");e.classList.add(ok?"good":"bad")};
+
+/* оболонка вправи: build(box) -> {check()} */
+function wrap(intro,build){
+  const box=h("div"),res=h("p",{class:"res",role:"status"});let ctx;
+  const mk=()=>{box.innerHTML="";res.textContent="";res.className="res";ctx=build(box)};mk();
+  return h("div",{},h("p",{class:"intro"},intro),box,h("div",{class:"bar"},
+    h("button",{class:"btn",onclick:()=>{const[s,t]=ctx.check();res.textContent=`Результат: ${s} з ${t}`+(s===t?" — відмінно!":"");res.className="res "+(s===t?"ok":"mid")}},"Перевірити"),
+    h("button",{class:"btn alt",onclick:mk},"Спробувати ще раз"),res));
+}
+
+/* вибір одного варіанта для кожного твердження (Так/Ні, класифікація) */
+const choice=(items,opts)=>box=>{
+  const st=sh(items).map(([t,a,x])=>{
+    const it=h("div",{class:"item"}),note=h("p",{class:"note",hidden:""},x||"");let pick=-1;
+    const bs=opts.map((o,i)=>h("button",{class:"opt","aria-pressed":"false",onclick:()=>{pick=i;bs.forEach((b,j)=>b.setAttribute("aria-pressed",j===i))}},o));
+    it.append(h("div",{},t),h("div",{class:"opts"},bs),note);box.append(it);return{it,note,a,get pick(){return pick}}});
+  return{check:()=>{let s=0;st.forEach(o=>{const ok=o.pick===o.a;if(ok)s++;mark(o.it,ok);if(o.note.textContent)o.note.hidden=false});return[s,st.length]}};
+};
+
+/* відповідність */
+const match=pairs=>box=>{
+  const defs=sh(pairs.map(p=>p[1])),rows=pairs.map(([t,d])=>{
+    const s=h("select",{"aria-label":t},h("option",{value:""},"— обери —"),defs.map(x=>h("option",{value:x},x)));
+    const it=h("div",{class:"item row"},h("b",{},t),s);box.append(it);return{it,s,d}});
+  return{check:()=>{let n=0;rows.forEach(r=>{const ok=r.s.value===r.d;if(ok)n++;mark(r.it,ok)});return[n,rows.length]}};
+};
+
+/* заповнити пропуски: {правильна|хиба1|хиба2} */
+const cloze=texts=>box=>{
+  const sel=[];
+  texts.forEach(tx=>{const p=h("p",{class:"item cloze"});let last=0,m;const re=/\{([^}]+)\}/g;
+    while((m=re.exec(tx))){p.append(tx.slice(last,m.index));const o=m[1].split("|");
+      const s=h("select",{},h("option",{value:""},"…"),sh(o).map(x=>h("option",{value:x},x)));sel.push({s,a:o[0]});p.append(s);last=re.lastIndex}
+    p.append(tx.slice(last));box.append(p)});
+  return{check:()=>{let n=0;sel.forEach(o=>{const ok=o.s.value===o.a;if(ok)n++;mark(o.s,ok)});return[n,sel.length]}};
+};
+
+/* тест: [питання, множинний?, [[текст, правильний?]]] */
+const quiz=qs=>box=>{
+  const L=qs.map(([q,multi,o],qi)=>{
+    const it=h("fieldset",{class:"item"},h("legend",{},q+(multi?" (обери всі правильні)":"")));
+    const ins=sh(o).map(([t,ok])=>{const i=h("input",{type:multi?"checkbox":"radio",name:"q"+qi+Math.random()});it.append(h("label",{class:"ch"},i,t));return{i,ok}});
+    box.append(it);return{it,ins}});
+  return{check:()=>{let n=0;L.forEach(q=>{const ok=q.ins.every(x=>x.i.checked===x.ok);if(ok)n++;mark(q.it,ok)});return[n,L.length]}};
+};
+
+/* послідовність */
+const seq=steps=>box=>{
+  let order=sh(steps.map((_,i)=>i));if(order.every((v,i)=>v===i))order.reverse();
+  const ul=h("ul",{class:"seq"});box.append(ul);
+  const draw=()=>{ul.innerHTML="";order.forEach((v,pos)=>{
+    const mv=h("div",{class:"mv"},
+      h("button",{"aria-label":"Вгору",onclick:()=>{if(pos>0){[order[pos-1],order[pos]]=[order[pos],order[pos-1]];draw()}}},"↑"),
+      h("button",{"aria-label":"Вниз",onclick:()=>{if(pos<order.length-1){[order[pos+1],order[pos]]=[order[pos],order[pos+1]];draw()}}},"↓"));
+    ul.append(h("li",{class:"item"},h("span",{},steps[v]),mv))})};
+  draw();
+  return{check:()=>{let n=0;[...ul.children].forEach((li,pos)=>{const ok=order[pos]===pos;if(ok)n++;mark(li,ok)});return[n,order.length]}};
+};
+
+/* картка самооцінювання */
+function selfCard(){
+  const G=[
+    ["Я знаю…","#1565C0",["що таке продихи і з яких структур вони складаються","які органи рослин забезпечують газообмін","як відбувається газообмін у грибів","які речовини надходять до рослини з ґрунту"]],
+    ["Я вмію…","#1B7F3B",["описати механізм відкривання й закривання продихів","порівнювати газообмін рослин і грибів","відрізняти пасивний транспорт від активного","користуватися біологічними термінами теми"]],
+    ["Я можу…","#C2410C",["пояснити, чому продихи закриваються в посуху","навести приклад мікоризи та пояснити її користь","пояснити значення кореневих волосків","обґрунтувати, чому ґрунт має бути пухким і аерованим"]],
+    ["Я розумію…","#7B1FA2",["чому для газообміну важлива велика площа поверхні","чому активне поглинання іонів потребує енергії","як дихання коренів пов’язане з мінеральним живленням","яку роль рослини відіграють у газовому складі атмосфери"]]];
+  const root=h("div"),inputs=[];let k=0;
+  root.append(h("p",{class:"intro"},"Постав позначку в кожному рядку: чесно оціни, наскільки ти впевнений(-а)."));
+  root.append(h("p",{},h("label",{},"Ім’я та клас: ",h("input",{class:"name",type:"text",autocomplete:"off"}))));
+  G.forEach(([t,c,qs])=>{const f=h("fieldset",{class:"sa-group",style:"--g:"+c},h("legend",{},t));
+    qs.forEach(q=>{const nm="sa"+(k++);const row=h("div",{class:"sa-q"},h("p",{},t.replace("…"," ")+q));
+      ["Так","Ні","Частково"].forEach(v=>{const i=h("input",{type:"radio",name:nm,value:v});inputs.push(i);row.append(h("label",{},i,v))});f.append(row)});root.append(f)});
+  const out=h("p",{class:"res",role:"status"});
+  root.append(h("div",{class:"bar"},
+    h("button",{class:"btn",onclick:()=>{const c={"Так":0,"Ні":0,"Частково":0};inputs.forEach(i=>{if(i.checked)c[i.value]++});const a=c["Так"]+c["Ні"]+c["Частково"];
+      out.className="res "+(c["Так"]>=12?"ok":"mid");
+      out.textContent=a<k?`Відповіли на ${a} з ${k} тверджень — дай відповідь на всі.`:`Так: ${c["Так"]} · Частково: ${c["Частково"]} · Ні: ${c["Ні"]}. `+(c["Ні"]+c["Частково"]?"Поверни до тем, де відповідь «Ні» чи «Частково», і виконай вправи ще раз.":"Чудово, тема засвоєна!")}},"Підсумок"),
+    h("button",{class:"btn alt",onclick:()=>window.print()},"Друкувати / зберегти PDF"),
+    h("button",{class:"btn alt",onclick:()=>{inputs.forEach(i=>i.checked=false);out.textContent="";out.className="res"}},"Очистити"),out));
+  return root;
+}
+
+/* ---------- ДАНІ ---------- */
+const TF=[
+["Продихи — основний шлях газообміну в листках рослин.",0,"Так. Через продихи надходять CO₂ і O₂, а також випаровується вода."],
+["Замикаючі клітини продихів не мають хлоропластів.",1,"Ні. На відміну від інших клітин епідермісу, вони містять хлоропласти."],
+["Через сочевички відбувається газообмін здерев’янілих стебел і коренів.",0,"Так. Сочевички — пори в корковому шарі, крізь які дифундують гази."],
+["Гриби дихають за допомогою продихів.",1,"Ні. Гриби дихають усією поверхнею міцелію: він тонкий і має велику площу."],
+["Світло стимулює надходження іонів Калію (K⁺) у замикаючі клітини.",0,"Так. Далі вода входить осмосом, тургор зростає — продихи відкриваються."],
+["У посуху тургор замикаючих клітин зростає і продихи відкриваються ширше.",1,"Ні. При нестачі води тургор падає, продихи закриваються (діє абсцизова кислота)."],
+["Активний транспорт іонів у кореневі волоски відбувається без витрат енергії.",1,"Ні. Він іде проти градієнта концентрації за участі білків-переносників і витрат АТФ."],
+["У більшості деревних порід продихи розташовані на нижньому боці листка.",0,"Так. Там менше нагрівання і втрата води."],
+["Мікориза — взаємовигідне співжиття гриба з коренем рослини.",0,"Так. Гриб дає воду й фосфати, рослина — органічні речовини."],
+["Погана аерація ґрунту не впливає на поглинання поживних речовин коренем.",1,"Ні. Без кисню корені не дихають, не отримують енергії й гірше поглинають іони."],
+["Деякі рослини (CAM-фотосинтез) відкривають продихи вночі, щоб заощадити воду.",0,"Так. Вночі прохолодніше — випаровується менше води."]];
+const MATCH=[
+["Замикаючі клітини","бобоподібні клітини, що утворюють продихову щілину"],
+["Сочевички","отвори в покривній тканині стовбурів і коренів для газообміну"],
+["Кореневі волоски","вирости клітин епідерми кореня, що поглинають воду й солі"],
+["Міцелій","вегетативне тіло гриба, що всмоктує речовини всією поверхнею"],
+["Мікориза","симбіоз міцелію гриба з коренями рослини"],
+["Транспірація","випаровування води рослиною"],
+["Осмос","рух води через напівпроникну мембрану"],
+["Абсцизова кислота","гормон, що викликає закривання продихів у посуху"]];
+const CLOZE=[
+"Основним шляхом газообміну листка є {продихи|сочевички|кореневі волоски}. Їх утворюють дві {замикаючі|побічні|покривні} клітини. Крізь щілину в листок надходить {вуглекислий газ|азот|водень} для {фотосинтезу|транспірації|бродіння}, а виходить {кисень|метан|аміак}.",
+"Світло стимулює {активне|пасивне|випадкове} закачування іонів {Калію|Натрію|Хлору} у замикаючі клітини. Вода входить за законами {осмосу|дифузії газів|фотосинтезу}, {тургор|осмос|обмін} зростає, і продихова щілина {відкривається|закривається|зникає}.",
+"Гриби є {гетеротрофами|автотрофами|хемотрофами}. Гази в них дифундують через усю поверхню {міцелію|плодового тіла|спор}. Ефективному газообміну сприяє {тонка|товста|дерев’яниста} клітинна стінка та велика площа поверхні.",
+"Вода з ґрунту надходить у корінь через {кореневі волоски|кореневий чохлик|стебло}. Іони (N, P, K) переміщуються проти градієнта концентрації за допомогою {активного|пасивного|вільного} транспорту, який потребує {АТФ|води|світла}."];
+const QUIZ=[
+["Чому при зростанні тургору продихова щілина відкривається?",0,[["Внутрішні стінки замикаючих клітин товстіші, тому клітини вигинаються",1],["Замикаючі клітини розділяються на дві частини",0],["Побічні клітини розчиняються",0],["Хлоропласти виходять з клітин",0]]],
+["Через які структури відбувається газообмін старих стовбурів дерев?",0,[["Продихи нижньої епідерми",0],["Сочевички",1],["Кореневі волоски",0],["Хлоропласти",0]]],
+["Що найімовірніше станеться з продихами під час тривалої посухи?",0,[["Відкриються якнайширше",0],["Закриються, щоб зберегти воду",1],["Зникнуть назавжди",0],["Почнуть виділяти воду рідиною",0]]],
+["Який транспорт дає змогу накопичувати іони в клітинах проти градієнта концентрації?",0,[["Осмос",0],["Проста дифузія",0],["Активний транспорт із витратою АТФ",1],["Випаровування",0]]],
+["Чому в ущільненому, заплавленому ґрунті рослини гірше поглинають мінеральні речовини?",0,[["Корені не отримують достатньо O₂ для дихання й енергії",1],["У ґрунті надто багато світла",0],["Кореневі волоски стають продихами",0],["Мінеральні речовини зникають",0]]],
+["Які чинники сприяють закриванню продихів?",1,[["Темрява",1],["Дефіцит води",1],["Абсцизова кислота",1],["Яскраве освітлення за достатньої кількості води",0]]],
+["Які структури забезпечують надходження газів до організмів?",1,[["Продихи листків",1],["Сочевички",1],["Поверхня міцелію грибів",1],["Корінцевий чохлик",0]]]];
+const SEQ1=["Світло стимулює активне закачування K⁺ у замикаючі клітини","Концентрація K⁺ в клітинах зростає","Вода надходить у замикаючі клітини осмосом","Тургорний тиск збільшується","Клітини вигинаються — продихова щілина відкривається"];
+const SEQ2=["Атмосферне повітря","Продихова щілина","Міжклітинний простір губчастої паренхіми","Клітини стовпчастої паренхіми з хлоропластами","Фотосинтез: утворення органічних речовин"];
+const CLS=[
+["Продихи",0],["Сочевички",0],["Міцелій",1],["Автотрофне живлення",0],["Гетеротрофне живлення",1],["Поглинання O₂ та виділення CO₂ при диханні",2],
+["Кореневі волоски",0],["Мікориза",2],["Поглинання поживних речовин усією поверхнею тіла",1],["Осмос і дифузія як способи надходження речовин",2],["Потреба в аерації ґрунту",2],["Продихові рухи, залежні від тургору",0]];
+
+/* ---------- ВКЛАДКИ ---------- */
+const TABS=[
+["Так чи ні","#1565C0",()=>wrap("Обери «Так» або «Ні» для кожного твердження.",choice(TF,["Так","Ні"]))],
+["Відповідності","#1B7F3B",()=>wrap("До кожного терміна обери правильне пояснення.",match(MATCH))],
+["Пропуски","#C2410C",()=>wrap("Заповни пропуски, вибравши правильні слова зі списку.",cloze(CLOZE))],
+["Тест","#7B1FA2",()=>wrap("Обери одну або кілька правильних відповідей.",quiz(QUIZ))],
+["Послідовність","#00796B",()=>h("div",{},
+  h("h3",{},"1. Відкривання продихів"),wrap("Розташуй кроки в правильному порядку кнопками ↑ ↓.",seq(SEQ1)),
+  h("h3",{},"2. Шлях вуглекислого газу"),wrap("Розташуй етапи від повітря до клітини листка.",seq(SEQ2)))],
+["Рослини чи гриби","#AD1457",()=>wrap("Кому належить ознака: рослинам, грибам чи обом групам?",choice(CLS,["Рослини","Гриби","Обидва"]))],
+["Картка самооцінювання","#37474F",selfCard]];
+
+const tabs=document.getElementById("tabs"),panels=document.getElementById("panels");
+TABS.forEach(([name,c,mk],i)=>{
+  const b=h("button",{role:"tab",id:"t"+i,"aria-controls":"p"+i,"aria-selected":i===0,style:"--c:"+c},name);
+  const p=h("section",{class:"panel",role:"tabpanel",id:"p"+i,"aria-labelledby":"t"+i,style:"--c:"+c},h("h2",{},name),mk());
+  if(i)p.hidden=true;
+  b.onclick=()=>{[...tabs.children].forEach((x,j)=>x.setAttribute("aria-selected",j===i));[...panels.children].forEach((x,j)=>x.hidden=j!==i);window.scrollTo({top:0})};
+  tabs.append(b);panels.append(p);
+});
+</script>
+</body>
+</html>
